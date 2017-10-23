@@ -1,0 +1,9 @@
+ <h3> Edit your information <%= @patient.first_name %> </h3>
+ <%= form_for @patient, :url => { :action => "update" } do |f| %>
+  <%= render partial: "/layouts/patient_information", locals: { f: f } %>
+  <br>
+  <br>
+  <br>
+  <%= f.submit 'Update Patient Record', :name => 'update patient' %>
+  <%= f.submit 'Cancel', :name => 'cancel' %>
+ <% end %>

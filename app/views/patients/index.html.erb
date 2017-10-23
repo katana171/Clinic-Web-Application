@@ -1,0 +1,28 @@
+<h1>A List of all patients</h1>
+
+<%= button_to "Add Patient", new_patient_path(@patient) %>
+<table>
+  <tr>
+    <th> MRN </th><th> First Name </th><th> Last Name</th><th> Action</th>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td> <%= patient.mrn %> </td>
+          <td> <%= patient.first_name %> </td>
+          <td> <%= patient.last_name %> </td>
+          <td> <%= link_to "Show", patientss_path(patient) %>  <%= link_to "Edit", edit_patient_path(patient) %> <%= link_to link_to "Delete", delete_patient_path(patient), data: { confirm: "Are you sure you want to delete this patient" } %></td>
+        </tr>
+      <% end %>
+</table>
+
+<div class="custom-alert">
+<%= flash[:notice] %>
+</div>
+
+<div class="errors">
+<% if flash[:alert] %>
+  <p> Error saving record due to the following errors: </p>
+  <% flash.each do |msg| %>
+      <%= msg %>
+  <% end %>
+<% end %>
+</div>

@@ -1,0 +1,19 @@
+<h1>Showing encounter details about <%=@encounter.visit_number %></h1>
+</div>
+<table>
+  <tr>
+    <th> Visit Number </th><th> Admitted At </th><th>Discharged At</th><th> Location </th><th> Room </th> <th> Bed</th>
+        <tr>
+          <td> <%= @encounter.visit_number %> </td>
+          <td> <%= @encounter.admitted_at %> </td>
+          <td> <%=@encounter.discharged_at %> </td>
+          <td> <%= @encounter.location %> </td>
+          <td> <%= @encounter.room %> </td>
+          <td> <%= @encounter.bed %> </td>
+        </tr>
+</table>
+<div class="line_buttons">
+<%= button_to 'Edit', edit_current_encounter_path(@encounter.id), :method => :get %>
+<%= button_to "Back", patientss_path(@encounter.patient_id), :method => :get %>
+<%= button_to "delete", delete_current_encounter_path(@encounter), method: :get, data: { confirm: "Are you sure you want to delete this encounter?"} %>
+</div>

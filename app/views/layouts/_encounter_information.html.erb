@@ -1,0 +1,21 @@
+<%= f.label :visit_number %>
+<%= f.text_field :visit_number %>
+ &nbsp;&nbsp;&nbsp;
+<%= f.label :admitted_at %>
+<%= f.datetime_select :admitted_at, :ampm => true, :minute_step => 01 %>
+<br>
+<br>
+<br>
+<%= f.label :discharged_at %>
+<%= f.datetime_select :discharged_at, :ampm => true, :minute_step => 01 %>
+&nbsp;&nbsp;&nbsp;
+<%= f.label :location %>
+<%= f.text_field :location %>
+<br>
+<br>
+<br>
+<%= f.label :room %>
+<%= f.text_field :room%>
+&nbsp;&nbsp;&nbsp;
+<%= f.label :bed %>
+<%= f.text_field :bed %>

@@ -1,0 +1,9 @@
+<h1>Add a new Patient</h1>
+<%= form_for @patient, :url => { :action => "create" } do |f| %>
+ <%= render partial: "/layouts/patient_information", locals: { f: f } %>
+ <br>
+ <br>
+ <br>
+ <%= f.submit 'Create Patient', :name => 'create patient' %>
+ <%= f.submit 'Cancel', :name => 'cancel' %>
+<% end %>

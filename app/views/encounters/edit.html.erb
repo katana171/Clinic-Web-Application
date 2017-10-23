@@ -1,0 +1,11 @@
+<h1>Edit encounter details about <%= @encounter.visit_number %></h1>
+
+<h1>Add a new Encounter</h1>
+<%= form_for @encounter, :url => { :action => "update" } do |f| %>
+ <%= render partial: "/layouts/encounter_information", locals: { f: f } %>
+ <br>
+ <br>
+ <br>
+ <%= f.submit 'Edit Encounter', :name => 'edit encounter' %>
+ <%= f.submit 'Cancel', :name => 'cancel' %>
+<% end %>
